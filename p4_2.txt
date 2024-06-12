@@ -1,0 +1,17 @@
+
+USE hw3;
+
+SELECT  COUNT(*) AS number_of_rows
+FROM order_details
+LEFT   JOIN orders ON order_details.order_id = orders.id
+RIGHT  JOIN customers ON orders.customer_id = customers.id
+LEFT  JOIN products ON order_details.product_id = products.id
+RIGHT   JOIN categories ON products.category_id = categories.id
+LEFT  JOIN employees ON orders.employee_id = employees.employee_id
+RIGHT  JOIN shippers ON orders.shipper_id = shippers.id
+INNER JOIN suppliers ON products.supplier_id = suppliers.id;
+
+
+При зміні операторів  INNER на LEFT чи RIGHT кількість рядків при відпрацюваня запиту не змінюється. Більш того, відсутня поява атрибутів, значення яких було NULL. Це відбувається тому, що вибірка в таблицях виконана у відповідності до їх зовнішніх звязків.
+
+Якщо поєднувати таблиці з використанням операторів  LEFT чи RIGHT замість INNER, які не будут узгоджені та повязані між собою зовнішніми звязками, то ми отримуємо атрибути NULL при відсутності значень в в одній з таблись з якою відбувається поєднання.

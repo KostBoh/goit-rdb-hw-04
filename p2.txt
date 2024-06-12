@@ -1,0 +1,55 @@
+USE LibraryManagement;
+
+SELECT * FROM authors;
+
+INSERT INTO authors ( author_name) 
+VALUES
+('Charles Dickens'),
+('Antoine de Saint Exupery'),
+('Paulo Coelio'),
+('J. K. Rowling'),
+('Agatha Christie'),
+('Cao Xueqin'),
+('J. R. R. Tolkien');
+
+SELECT * FROM genres;
+
+INSERT INTO genres(genre_name)
+VALUES 
+('Historical fiction'),
+('Fantasy'),
+('Mystery'),
+('Family saga');
+
+SELECT * FROM books;
+
+INSERT INTO books (title, publication_year, author_id, genre_id)
+VALUES 
+('A Tale of Two Cities', 1959, 1, 1),
+('The Litle Prince', 1943, 2, 2),
+('The Alchemist', 1988, 3, 2),
+('Harry Potter and the Philosopher"s Stone', 1997, 4, 2),
+('And Then There Were None', 1939, 5, 3),
+('Dream of the Red Chamber', 1991, 6,  4),
+('The Hobbit', 1937, 7, 2);
+
+SELECT * FROM users;
+
+INSERT INTO users(username, email)
+VALUES
+('Cristiano Ronaldo', 'Ronaldo@gmail.com'),
+('Lionel Messi', 'Messi@gmail.com'),
+('Taylor Swift', 'Swift@gmail.com'),
+('Elon Musk', 'Musk@gmail.com');
+
+SELECT *  FROM borrowed_books;
+
+INSERT INTO borrowed_books(book_id, user_id, borrow_date, return_date)
+VALUES
+(1, 2, '2020-01-02', '2021-01-03'),
+(2, 3, '2021-02-03', '2022-02-04'),
+(4, 1, '2022-03-04', '2023-04-05');
+
+
+
+ 
